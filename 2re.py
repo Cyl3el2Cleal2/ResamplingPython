@@ -21,6 +21,14 @@ if(not path.exists(args[0])):
     quit()
 if(len(args) == 1):
     print("Downsampling to default: {}".format(new_rate))
+if(len(args) == 2):
+    try:
+        float(args[1])
+        new_rate = int(args[1])
+    except Exception as err:
+        print(err)
+
+
 
 filename = args[0]
 src = filename
